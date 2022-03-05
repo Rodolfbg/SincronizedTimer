@@ -1,0 +1,52 @@
+#container{
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+    background: rgb(156, 188, 209);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#BoxCircle{
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    
+    
+}
+#circlePro{
+    width: 250px;
+    height: 250px;
+    background: rgb(38, 38, 88);
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: -2px 4px 8px 1px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+circle{
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke: rgb(20, 82, 82);
+    stroke-width: 10;
+    transform: translate(22px, 22px);
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+}
+circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: rgb(119, 114, 114);
+}
+circle:nth-child(2){
+    
+    stroke: rgb(7, 128, 184);
+    transition: all 1s;
+}

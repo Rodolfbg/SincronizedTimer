@@ -1,0 +1,48 @@
+#inners{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    top: 73%;
+    position: absolute;
+
+}
+
+#but{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5px;
+}
+#setcount{
+    border-radius: 5px;
+    width: 250px;
+    height: 28px;
+    text-align: center;
+}
+#primarybut{
+    height: 35px;
+    width: 70px;
+    margin: 4px;
+    color: white;
+    background: green;
+    border-radius: 5px;
+}
+#secondbut{
+    height: 35px;
+    width: 70px;
+    margin: 4px;
+    color: white;
+    background: yellow;
+    border-radius: 5px;
+}
+#lastbut{
+    height: 35px;
+    width: 70px;
+    margin: 4px;
+    color: white;
+    background: red;
+    border-radius: 5px;
+}

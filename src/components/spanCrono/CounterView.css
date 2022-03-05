@@ -1,0 +1,10 @@
+#counter{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 99;
+   
+}
