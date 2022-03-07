@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import BarProgress from "../crono/barProgress";
 import InnerData from "../inerData/innerdata";
 
@@ -10,10 +10,12 @@ const TimerDown: React.FC = () => {
     const [secondDown, setSecondDown] = useState(0);
     const [minuteDown, setMinute] = useState(0);
     const [butIn, setButIn] = useState<boolean>(false);
-    const[percentualTimer,setPercentualTimer] = useState(secondDown * 100 / secondDown)
+    const [sencondTotal, setSecondTotal] = useState<number>(0);
+    const [percentualTimer, setPercentualTimer] = useState<number>(0)
 
+useEffect(()=>console.log(percentualTimer),[percentualTimer])
 
-
+    
     useEffect(() => {
         if (!butIn) return
         if (secondDown > 0) {
@@ -23,6 +25,7 @@ const TimerDown: React.FC = () => {
 
             }, 1000);
         }
+        setPercentualTimer( Math.floor (secondDown / sencondTotal * 100))
 
     }, [secondDown, butIn]);
 
@@ -33,7 +36,10 @@ const TimerDown: React.FC = () => {
         <>
             <BarProgress progressCircle={percentualTimer} min={String(minutes).padStart(2, '0')} sec={String(seconds).padStart(2, '0')}>
                 <InnerData
-                    onChangeInput={(e) => { setSecondDown(parseInt(e.target.value) * 60) }}
+                    onChangeInput={(e) => {
+                        setSecondDown(parseInt(e.target.value) * 60);
+                        setSecondTotal(parseInt(e.target.value) * 60)
+                    }}
                     onChangeBtnStart={() => { setButIn(true) }}
                 />
             </BarProgress>

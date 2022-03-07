@@ -8,10 +8,12 @@ type props ={
     onChangeBtnPause?: React.MouseEventHandler<HTMLButtonElement> | undefined,
     onChangeBtnStop?: React.MouseEventHandler<HTMLButtonElement> | undefined,
 
+
 }
 
 
 const InnerData:React.FC<props> =  ({ onChangeInput , onChangeBtnPause,onChangeBtnStart,onChangeBtnStop})=>{
+
     return(
         <div id="inners">
             <input onChange={onChangeInput} id="setcount" type="text" placeholder="Set your timer" />
