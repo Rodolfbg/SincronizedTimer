@@ -12,10 +12,11 @@ const TimerDown: React.FC = () => {
     const [butIn, setButIn] = useState<boolean>(false);
     const [sencondTotal, setSecondTotal] = useState<number>(0);
     const [percentualTimer, setPercentualTimer] = useState<number>(0)
+    const [butStop, setButStop] = useState<boolean>(false)
 
-useEffect(()=>console.log(percentualTimer),[percentualTimer])
+    useEffect(() => console.log(percentualTimer), [percentualTimer])
 
-    
+
     useEffect(() => {
         if (!butIn) return
         if (secondDown > 0) {
@@ -25,10 +26,13 @@ useEffect(()=>console.log(percentualTimer),[percentualTimer])
 
             }, 1000);
         }
-        setPercentualTimer( Math.floor (secondDown / sencondTotal * 100))
+        if(butStop == true) return setSecondDown(0)
 
-    }, [secondDown, butIn]);
+        setPercentualTimer(Math.floor(secondDown / sencondTotal * 100))
 
+    }, [secondDown, butIn, butStop]);
+
+    const stopcounter = 0
     const minutes = Math.floor(secondDown / 60);
     const seconds = secondDown % 60;
 
@@ -41,6 +45,7 @@ useEffect(()=>console.log(percentualTimer),[percentualTimer])
                         setSecondTotal(parseInt(e.target.value) * 60)
                     }}
                     onChangeBtnStart={() => { setButIn(true) }}
+                    onChangeBtnStop={() => { setButStop(butStop ? false : true) }}
                 />
             </BarProgress>
         </>
