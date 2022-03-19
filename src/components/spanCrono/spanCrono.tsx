@@ -12,7 +12,7 @@ const TimerDown: React.FC = () => {
 
     const [secondDown, setSecondDown] = useState(0);
     const [butIn, setButIn] = useState<boolean>(false);
-    const [sencondTotal, setSecondTotal] = useState<number>(0);
+    const [secondTotal, setSecondTotal] = useState<number>(0);
     const [percentualTimer, setPercentualTimer] = useState<number>(0);
     const [butStop, setButStop] = useState<boolean>(false);
     const [butPause, setButPause] = useState<boolean>(false);
@@ -39,7 +39,7 @@ const TimerDown: React.FC = () => {
         if (butStop) {
             clearTimeout(timer)
             setButIn(false)
-            setSecondDown(sencondTotal)
+            setSecondDown(secondTotal)
             setPercentualTimer(0)
             setButStop(props => !props)
             return
@@ -49,11 +49,10 @@ const TimerDown: React.FC = () => {
         if (secondDown > 0 && butIn && !butPause) {
 
             timer = setTimeout(() => {
-
                 setSecondDown(state => state - 1);
             }, 1000);
         }
-        setPercentualTimer(Math.floor(secondDown / sencondTotal * 100))
+        setPercentualTimer(Math.floor(secondDown / secondTotal * 100))
     }, [secondDown, butIn, butStop, butPause]);
 
 
