@@ -7,7 +7,7 @@ type props ={
     onChangeBtnStart?: React.MouseEventHandler<HTMLButtonElement> | undefined,
     onChangeBtnPause?: React.MouseEventHandler<HTMLButtonElement> | undefined,
     onChangeBtnStop?: React.MouseEventHandler<HTMLButtonElement> | undefined,
-
+    
 
 }
 
